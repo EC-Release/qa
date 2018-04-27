@@ -16,11 +16,11 @@ Frankfurt PoP | v1 | TBD | TBD | TBD
 GovCloud | TBD | TBD | TBD | TBD
 
 ## Live Data
-Env | Gateway | Service | Test Status
+Env | Gateway | Service | Build Status
 --- | --- | --- | ---
 Predix CF1 | <a href='https://ec-int-test-gateway.run.aws-usw02-dev.ice.predix.io/health'>Health</a> | [API](https://5600f64f-4d64-4af6-9bd1-0939d8880049.run.aws-usw02-pr.ice.predix.io/v1/index/)</a> | [Internal Build](http://10.227.87.157/jenkins/blue/organizations/jenkins/%E3%82%A4%E3%82%B7%20(EC)%2FAutomation%2FQA%2FEC%20Integration%20Test%20(CF1)/activity)
 Predix CF3 | [Health](https://ec-int-test-gateway.run.aws-usw02-dev.ice.predix.io/health) | [API](https://e27fc834-28be-4851-9d6a-b7033d568270.run.aws-usw02-dev.ice.predix.io/v1beta/index/) | [Internal Build](http://10.227.87.157/jenkins/blue/organizations/jenkins/%E3%82%A4%E3%82%B7%20(EC)%2FAutomation%2FQA%2FEC%20Integration%20Test%20(CF3)/activity)
-Predix East | [Health](https://ec-int-test-gateway.run.aws-usw02-dev.ice.predix.io/health) | [API](https://e27fc834-28be-4851-9d6a-b7033d568270.run.aws-usw02-dev.ice.predix.io/v1beta/index/) | [Internal Build](https://i.ci.build.ge.com/rtc5ryln/ci/blue/organizations/jenkins/Enterprise-Connect%2FEC%20Integration%20Test%20(EAST)/activity)
+Predix East | [Health](https://ec-int-test-gateway.run.aws-usw02-dev.ice.predix.io/health) | [API](https://e27fc834-28be-4851-9d6a-b7033d568270.run.aws-usw02-dev.ice.predix.io/v1beta/index/) | <a href='https://i.ci.build.ge.com/rtc5ryln/ci/blue/organizations/jenkins/Enterprise-Connect%2FEC%20Integration%20Test%20(EAST)/activity'><img src='https://i.ci.build.ge.com/rtc5ryln/ci/buildStatus/icon?job=Enterprise-Connect/EC Integration Test (EAST)'></a>
 
 ## Test Workflow
 1. Bootstrap env; download the latest agent artifact.
