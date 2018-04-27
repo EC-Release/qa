@@ -1,4 +1,4 @@
-# ec-test-automation
+# ec-test-automation-II
 Enterprise-Connect Test Automation
 
 ### Goal
