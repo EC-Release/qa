@@ -34,7 +34,6 @@ node(env.JENV) {
        }
 
        stage('docker build'){
-//git checkout develop
 	 sh """ 
 chmod 755 ./ec_init.sh
 ./ec_init.sh

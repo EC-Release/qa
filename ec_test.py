@@ -50,12 +50,10 @@ EC_GATEWAY_APP_NAME=os.environ['EC_GATEWAY_INST']
 EC_AGT_GATEWAY_VAR='./'+EC_ART_NAME+' -mod gateway -lpt ${PORT} -zon '+EC_SERVICE_ZONE+' -sst '+EC_SERVICE+' -dbg -tkn '+EC_SERVICE_TKN+' -shc'
 
 EC_SERVER_APP_NAME=os.environ['EC_SERVER_INST']
-
 EC_AGT_SERVER_VAR='./'+EC_ART_NAME+' -mod server -aid '+EC_SERVER_ID+' -hst wss://'+EC_GATEWAY_APP_NAME+'.'+EC_SHARED_DOMAIN+'/agent -rht '+EC_PSQL_HOST+' -rpt 5432 -cid '+EC_UAA_CID+' -csc '+EC_UAA_CSC+' -oa2 '+EC_UAA+' -dur 300 -dbg -hca ${PORT} -shc -zon '+EC_SERVICE_ZONE+' -sst '+EC_SERVICE+' -grp '+EC_GROUP_ID
 
 #noproxy env
 EC_AGT_CLIENT_VAR='./'+EC_ART_NAME+' -mod client -aid '+EC_CLIENT_ID+' -hst wss://'+EC_GATEWAY_APP_NAME+'.'+EC_SHARED_DOMAIN+'/agent -lpt 7990 -tid '+EC_SERVER_ID+' -oa2 '+EC_UAA+' -cid '+EC_UAA_CID+' -csc '+EC_UAA_CSC+' -shc -dur 300 -dbg -grp '+EC_GROUP_ID+' &'
-
 
 #EC_AGT_CLIENT_VAR='./'+EC_ART_NAME+' -mod client -aid '+EC_CLIENT_ID+' -hst wss://'+EC_GATEWAY_APP_NAME+'.'+EC_SHARED_DOMAIN+'/agent -lpt 7990 -tid '+EC_SERVER_ID+' -oa2 '+EC_UAA+' -cid '+EC_UAA_CID+' -csc '+EC_UAA_CSC+' -shc -dur 300 -dbg -pxy '+PROXY+' &'
 

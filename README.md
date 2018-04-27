@@ -72,3 +72,4 @@ Predix East | [Health](https://ec-int-test-gateway.run.aws-usw02-dev.ice.predix.
 ### Benchmark
 - Averaged x100k rows/1.2 secs in CF1.
 - Averaged x100k rows/1.2 secs in CF3.
+
