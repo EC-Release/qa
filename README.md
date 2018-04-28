@@ -4,7 +4,7 @@ Enterprise-Connect Test Automation
 ### Goal
 - To test EC usage model `postgres(cf)<-server(cf)->gateway(cf)<-client(jenkins)<-request(jenkins)`
 - Standardise the usage compatibility.
-- Begining of May 1st '18, effective immidiately, we will be implementing and maintaining EC One the [promise of compatibility]() for the future of EC developer Programs.
+- Beginning of May 1st '18, effective immidiately, we will be implementing and maintaining EC One the [promise of compatibility]() for the future of EC developer Programs.
 
 ## Revision Matrix
 Env | Rev. (prefix) | Agent | Service | CF Broker | SDK/Plugins | Tools
