@@ -19,8 +19,10 @@ set -e
 
 #let's do docker way
 function docker_run () {
+
+    #logout from existing docker login
+    docker logout
     
-    #docker pull golang
     docker build -t ${ARTIFACT}_img .
     docker run -i --name ${ARTIFACT}_inst ${ARTIFACT}_img
 
