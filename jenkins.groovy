@@ -15,8 +15,7 @@ node(env.JENV) {
 	 checkout scm
 	 sh 'ls -al'
 	 echo "init"
-
-"""
+/*
 	 cfc = env.CF_ENV_CRED
 
 	 withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: cfc,
@@ -31,7 +30,8 @@ node(env.JENV) {
 	   ).trim()
 	   //env.CF_USER = env.CF_USR
 	 }
-"""	
+*/	
+
        }
 
        stage('docker build'){
