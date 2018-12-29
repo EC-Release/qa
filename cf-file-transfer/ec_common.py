@@ -1,4 +1,4 @@
-__author__ = 'Chia Chang <chia.chang@ge.com>'
+__author__ = '安田 アポロ <apolo.yasuda@ge.com>'
 
 import urllib2, zipfile, os,time, fileinput, logging
 import subprocess as sp

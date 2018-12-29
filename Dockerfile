@@ -7,12 +7,12 @@
 #  with the terms and conditions stipulated in the agreement/contract
 #  under which the software has been supplied.
 #
-#  author: chia.chang@ge.com
+#  author: apolo.yasuda@ge.com
 #
 
 FROM python:2.7-slim
 
-MAINTAINER Chia Chang "chia.chang@ge.com"
+MAINTAINER "安田 アポロ <apolo.yasuda@ge.com>"
 
 COPY ./ ~/
 
@@ -33,7 +33,7 @@ RUN mv cf /usr/local/bin
 RUN cf --version
 
 RUN ls -al && pwd
-RUN python2 -u ./ec_test.py
+#RUN python2 -u ./ec_test.py
 
 #RUN chmod +x $GOPATH/src/{DHOME}
 # No need to listen to a port. busted!
