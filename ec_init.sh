@@ -16,6 +16,14 @@ set -e
 
 #no proxy env
 #export https_proxy=${PROXY}
+function reset_proxy(){
+    export HTTP_PROXY=${PROXY}
+    export HTTPS_PROXY=${PROXY}
+    export http_proxy=${PROXY}
+    export https_proxy=${PROXY}
+    eval echo $(git config --global http.proxy ${PROXY})
+    eval echo $(git config --global https.proxy ${PROXY})
+}
 
 function unset_proxy (){
     #weird corporate setting
@@ -46,7 +54,7 @@ function docker_run () {
     
     #docker rm ${CID}
 
-    unset_proxy
+    reset_proxy
 
     docker login dtr.predix.io -u ${DTRUSR} -p ${DTRPWD}
 
@@ -91,6 +99,7 @@ eval "sed -i -e 's#{EC_SCALE_NUM}#${EC_SCALE_NUM}#g' ./Dockerfile"
 eval "sed -i -e 's#{EC_GROUP_ID}#${EC_GROUP_ID}#g' ./Dockerfile"
 ```
 
+reset_proxy
 curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" | tar -zx
 #no_docker_run
 docker_run
