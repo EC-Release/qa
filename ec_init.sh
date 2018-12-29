@@ -38,15 +38,15 @@ function docker_run () {
 
     docker login dtr.predix.io -u ${DTRUSR} -p ${DTRPWD}
 
-    docker tag ecagent:beta dtr.predix.io/dig-digiconnect/ec-agent-builder:v1beta
+    docker tag ${ARTIFACT}_img:v1beta dtr.predix.io/dig-digiconnect/ec-agent-testsuite:v1beta
 
-    docker push dtr.predix.io/dig-digiconnect/ec-agent-builder:v1beta
+    docker push dtr.predix.io/dig-digiconnect/ec-agent-testsuite:v1beta
     
     #docker rmi ${IID}
 }
 
 ARTIFACT=ec-int-test
-
+```
 eval "sed -i -e 's#{CF_API_URI}#${CF_API_URI}#g' ./Dockerfile"
 eval "sed -i -e 's#{CF_USERNAME}#${CF_USERNAME}#g' ./Dockerfile"
 eval "sed -i -e 's#{CF_PASSWORD}#${CF_PASSWORD}#g' ./Dockerfile"
@@ -77,6 +77,7 @@ eval "sed -i -e 's#{EC_SERVER_INST}#${EC_SERVER_INST}#g' ./Dockerfile"
 eval "sed -i -e 's#{EC_GATEWAY_INST}#${EC_GATEWAY_INST}#g' ./Dockerfile"
 eval "sed -i -e 's#{EC_SCALE_NUM}#${EC_SCALE_NUM}#g' ./Dockerfile"
 eval "sed -i -e 's#{EC_GROUP_ID}#${EC_GROUP_ID}#g' ./Dockerfile"
+```
 
 curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" | tar -zx
 #no_docker_run
