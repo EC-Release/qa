@@ -1,4 +1,4 @@
-__author__ = 'Chia Chang <chia.chang@ge.com>'
+__author__ = '安田 アポロ <apolo.yasuda@ge.com>'
 
 import psycopg2,time
 

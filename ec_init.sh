@@ -8,7 +8,7 @@
 #  with the terms and conditions stipulated in the agreement/contract
 #  under which the software has been supplied.
 #
-#  author: chia.chang@ge.com
+#  author: apolo.yasuda@ge.com
 #
 
 #set -x
@@ -21,21 +21,28 @@ set -e
 function docker_run () {
 
     #logout from existing docker login
-    docker logout
+    #docker logout
     
-    docker build -t ${ARTIFACT}_img .
-    docker run -i --name ${ARTIFACT}_inst ${ARTIFACT}_img
+    docker build -t ${ARTIFACT}_img:v1beta .
+    #docker run -i --name ${ARTIFACT}_inst ${ARTIFACT}_img
 
-    CID=$(docker ps -aqf "name=${ARTIFACT}_inst")
-    IID=$(docker images -q ${ARTIFACT}_img)
+    #CID=$(docker ps -aqf "name=${ARTIFACT}_inst")
+    IID=$(docker images -q ${ARTIFACT}_img:v1beta)
 
     #git clone ${REPO} ./${DIST}/
     
     #docker cp ${CID}:/${DIST}/. ./${DIST}/bin/
 
-    docker rm ${CID}
+    
+    #docker rm ${CID}
 
-    docker rmi ${IID}
+    docker login dtr.predix.io -u ${DTRUSR} -p ${DTRPWD}
+
+    docker tag ecagent:beta dtr.predix.io/dig-digiconnect/ec-agent-builder:v1beta
+
+    docker push dtr.predix.io/dig-digiconnect/ec-agent-builder:v1beta
+    
+    #docker rmi ${IID}
 }
 
 ARTIFACT=ec-int-test
