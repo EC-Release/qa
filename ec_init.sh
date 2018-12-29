@@ -17,6 +17,16 @@ set -e
 #no proxy env
 #export https_proxy=${PROXY}
 
+function unset_proxy (){
+    #weird corporate setting
+    unset HTTP_PROXY
+    unset HTTPS_PROXY
+    unset http_proxy
+    unset https_proxy
+    eval echo $(git config --global --unset http.proxy)
+    eval echo $(git config --global --unset https.proxy)
+}
+
 #let's do docker way
 function docker_run () {
 
@@ -35,6 +45,8 @@ function docker_run () {
 
     
     #docker rm ${CID}
+
+    unset_proxy
 
     docker login dtr.predix.io -u ${DTRUSR} -p ${DTRPWD}
 
