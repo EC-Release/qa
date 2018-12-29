@@ -99,7 +99,7 @@ eval "sed -i -e 's#{EC_SCALE_NUM}#${EC_SCALE_NUM}#g' ./Dockerfile"
 eval "sed -i -e 's#{EC_GROUP_ID}#${EC_GROUP_ID}#g' ./Dockerfile"
 ```
 
-reset_proxy
+unset_proxy
 curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" | tar -zx
 #no_docker_run
 docker_run
