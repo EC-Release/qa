@@ -1,7 +1,7 @@
 #!groovy
 /*
  * project ec connectivity test
- * author: chia.chang@ge.com
+ * author: apolo.yasuda@ge.com
  */
 
 node(env.JENV) {
@@ -16,6 +16,7 @@ node(env.JENV) {
 	 sh 'ls -al'
 	 echo "init"
 
+"""
 	 cfc = env.CF_ENV_CRED
 
 	 withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: cfc,
@@ -30,7 +31,7 @@ node(env.JENV) {
 	   ).trim()
 	   //env.CF_USER = env.CF_USR
 	 }
-	
+"""	
        }
 
        stage('docker build'){
