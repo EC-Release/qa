@@ -6,6 +6,9 @@ __author__ = '安田 アポロ <apolo.yasuda@ge.com>'
    based on the model postgres<-server->gateway<-client<-request
 '''
 
+import sys
+print sys.path
+
 import  os, json, yaml, base64, sys,  threading, atexit
 from time import sleep
 
