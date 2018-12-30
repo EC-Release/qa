@@ -14,7 +14,7 @@ FROM python:2.7-slim
 
 MAINTAINER "安田 アポロ <apolo.yasuda@ge.com>"
 
-USR root
+USER root
 COPY ./cf /usr/local/bin
 COPY ./__init__.py ./
 WORKDIR ~/
