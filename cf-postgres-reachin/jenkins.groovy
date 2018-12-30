@@ -79,8 +79,8 @@ cat ./env.list
 		    
 		    docker.image('dtr.predix.io/dig-digiconnect/ec-agent-testsuite:v1beta').withRun('--env-file ./env.list -v "$(pwd)":/benchmark') { c ->
 			sh """
+chmod -R 777 ./../
 ls -al && pwd
-chmod -R 755 ./
 python2 -u ./test.py
 """
 		    }
