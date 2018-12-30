@@ -76,18 +76,13 @@ cat ./env.list
 			sh "docker pull dtr.predix.io/dig-digiconnect/ec-agent-testsuite:v1beta"
 			
 		    }
-		    
-		    withDockerContainer(image: 'dtr.predix.io/dig-digiconnect/ec-agent-testsuite:v1beta', args: '--env-file ./env.list -v "$(pwd)":/benchmark -u root') {
-			
+
+		    stage('run docker'){
 			sh """
-whoami
-ls -al && pwd
-python2 -u ./test.py
-"""
-		    	
+docker run --env-file ./env.list -v "$(pwd)":/benchmark -u root -i --name ec-agent-tesetsuite_${BUILD_NUMBER} ec-agent-testsuite:v1beta
+""" 
 		    }
-		}
-		
+		}		
 	    }
 	/* disable the file check-in until a better solution identified
 	 sh """ 
