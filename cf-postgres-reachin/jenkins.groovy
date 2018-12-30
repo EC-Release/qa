@@ -68,7 +68,7 @@ eval "sed -i -e 's#{EC_GROUP_ID}#${EC_GROUP_ID}#g' ./env.list"
 cat ./env.list
 """
 
-		withDockerRegistry([credentialsId: env.TC_DTR_CRED, url: env.TC_DTR_URL]) {
+		withDockerRegistry([credentialsId: env.EC_DTR_CRED, url: env.EC_DTR_URL]) {
 
 		    stage('pre-build'){
 
