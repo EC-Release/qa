@@ -16,6 +16,20 @@ node(env.JENV) {
 	    sh 'ls -al'
 	    echo "init"
 
+	    cfc = env.CF_ENV_CRED
+
+	    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: cfc,
+			      usernameVariable: 'CF_USER', passwordVariable: 'CF_PSWD']]) {
+		env.CF_USERNAME = sh (
+		    script: "echo ${CF_USER}",
+		    returnStdout: true
+		).trim()
+		env.CF_PASSWORD = sh (
+		    script: "echo ${CF_PSWD}",
+		    returnStdout: true
+		).trim()
+		//env.CF_USER = env.CF_USR
+	    }
 	}
 
 	stage('docker build'){
