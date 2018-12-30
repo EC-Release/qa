@@ -77,24 +77,22 @@ cat ./env.list
 			
 		    }
 		    
-		    docker.image('dtr.predix.io/dig-digiconnect/ec-agent-testsuite:v1beta').withRun('--env-file ./env.list -v "$(pwd)":/benchmark -u root') { c ->
-
-			docker.image('dtr.predix.io/dig-digiconnect/ec-agent-testsuite:v1beta').inside() {
-			    sh """
+		    docker.image('dtr.predix.io/dig-digiconnect/ec-agent-testsuite:v1beta').withRun('--env-file ./env.list -v "$(pwd)":/benchmark -u root').inside() {
+			sh """
 whoami
 ls -al && pwd
 python2 -u ./test.py
 """
-			}
+		    	
 		    }
 		}
 		
 	    }
-	    /* disable the file check-in until a better solution identified
-	     sh """ 
-	     git checkout staging
-	     chmod 755 ./ec_init.sh
-	     ./ec_init.sh | tee ./test-dump.log
+	/* disable the file check-in until a better solution identified
+	 sh """ 
+	 git checkout staging
+	 chmod 755 ./ec_init.sh
+	 ./ec_init.sh | tee ./test-dump.log
 	     sed -i '/Step 5 : ENV/d' test-dump.log
 	     git add -f ./test-dump.log
 	     git config user.email "ec.robot@ge.com"
