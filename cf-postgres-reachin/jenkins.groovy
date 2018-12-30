@@ -77,7 +77,7 @@ cat ./env.list
 			
 		    }
 		    
-		    docker.image('ec-agent-testsuite:v1beta').withRun('--env-file ./env.list -v "$(pwd)":/benchmark') { c ->
+		    docker.image('dtr.predix.io/dig-digiconnect/ec-agent-testsuite:v1beta').withRun('--env-file ./env.list -v "$(pwd)":/benchmark') { c ->
 			sh 'ls -al'
 		    }
 		}
