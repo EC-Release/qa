@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 __author__ = '安田 アポロ <apolo.yasuda@ge.com>'
 
 import psycopg2,time
