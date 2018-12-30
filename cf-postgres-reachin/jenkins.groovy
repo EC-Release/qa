@@ -33,7 +33,8 @@ node(env.JENV) {
 	}
 
 	stage('docker build'){
-	    sh """ 
+	    dir(env.TEST_PATH) {
+		sh """ 
 eval "sed -i -e 's#{CF_API_URI}#${CF_API_URI}#g' ./env.list"
 eval "sed -i -e 's#{CF_USERNAME}#${CF_USERNAME}#g' ./env.list"
 eval "sed -i -e 's#{CF_PASSWORD}#${CF_PASSWORD}#g' ./env.list"
@@ -67,21 +68,21 @@ eval "sed -i -e 's#{EC_GROUP_ID}#${EC_GROUP_ID}#g' ./env.list"
 cat ./env.list
 """
 
-            withDockerRegistry([credentialsId: env.TC_DTR_CRED, url: env.TC_DTR_URL]) {
+		withDockerRegistry([credentialsId: env.TC_DTR_CRED, url: env.TC_DTR_URL]) {
 
-		stage('pre-build'){
+		    stage('pre-build'){
 
-		    echo "step to ensure the parent image is current."
-		    sh "docker pull dtr.predix.io/dig-digiconnect/ec-agent-testsuite:v1beta"
+			echo "step to ensure the parent image is current."
+			sh "docker pull dtr.predix.io/dig-digiconnect/ec-agent-testsuite:v1beta"
+			
+		    }
 		    
+		    docker.image('ec-agent-testsuite:v1beta').withRun('--env-file ./env.list -v "$(pwd)":/benchmark') { c ->
+			sh 'ls -al'
+		    }
 		}
 		
-		docker.image('ec-agent-testsuite:v1beta').withRun('--env-file ./env.list -v "$(pwd)":/benchmark') { c ->
-	            sh 'ls -al'
-		}
 	    }
-	    
-
 	    /* disable the file check-in until a better solution identified
 	     sh """ 
 	     git checkout staging
