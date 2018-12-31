@@ -106,7 +106,7 @@ docker run --env-file ./env.list -v \"${theDIR}\":/benchmark -u root -i --name e
 	stage('cleanup'){
 
 	    echo "clean up"
-	    deleteDir()
+	    //deleteDir()
 	}
 
 	stage('exit'){
@@ -125,7 +125,7 @@ docker run --env-file ./env.list -v \"${theDIR}\":/benchmark -u root -i --name e
          subject: 'project build failed',
          to: 'zzzz@yyyyy.com'
 	 */
-        deleteDir()
+        //deleteDir()
         throw err
     }
 
