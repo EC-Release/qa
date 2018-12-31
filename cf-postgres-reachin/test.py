@@ -167,6 +167,9 @@ def main():
     #launch agent in client mode
     os.system(EC_AGT_CLIENT_VAR)
 
+    print('client agent cmd-')
+    print(EC_AGT_CLIENT_VAR)
+    
     sleep(5)
     
     db=PostgresTest(PG_CONNSTR)
