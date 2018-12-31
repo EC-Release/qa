@@ -63,7 +63,8 @@ EC_AGT_GW_SERVER_VAR='./'+EC_ART_NAME+' -mod gw:server -zon '+EC_SERVICE_ZONE+' 
 #mod gw:server -gpt 8991 -zon e27fc834-28be-4851-9d6a-b7033d568270 -grp chia-qa -sst https://e27fc834-28be-4851-9d6a-b7033d568270.run.aws-usw02-dev.ice.predix.io -dbg -tkn YWRtaW46U3J4RUMxRFlBeERyMmtqa01BT3o1S0xvMTkyMmcwRkRlT3pHcG9KMjJCa2pVYWJuV1E= -pxy http://PITC-Zscaler-AmericasZ.proxy.corporate.ge.com:80 -aid 5OfyeW -rpt 8997 -rht localhost -plg
 
 #noproxy env
-EC_AGT_CLIENT_VAR='./'+EC_ART_NAME+' -mod client -aid '+EC_CLIENT_ID+' -hst wss://'+EC_GATEWAY_APP_NAME+'.'+EC_SHARED_DOMAIN+'/agent -lpt 7990 -tid '+EC_SERVER_ID+' -oa2 '+EC_UAA+' -cid '+EC_UAA_CID+' -csc '+EC_UAA_CSC+' -shc -dur 300 -dbg -grp '+EC_GROUP_ID+' &'
+#fuse-mode agent url
+EC_AGT_CLIENT_VAR='./'+EC_ART_NAME+' -mod client -aid '+EC_CLIENT_ID+' -hst wss://'+EC_GW_SERVER_APP_NAME+'.'+EC_SHARED_DOMAIN+'/agent -lpt 7990 -tid '+EC_SERVER_ID+' -oa2 '+EC_UAA+' -cid '+EC_UAA_CID+' -csc '+EC_UAA_CSC+' -shc -dur 300 -dbg -grp '+EC_GROUP_ID+' &'
 
 #EC_AGT_CLIENT_VAR='./'+EC_ART_NAME+' -mod client -aid '+EC_CLIENT_ID+' -hst wss://'+EC_GATEWAY_APP_NAME+'.'+EC_SHARED_DOMAIN+'/agent -lpt 7990 -tid '+EC_SERVER_ID+' -oa2 '+EC_UAA+' -cid '+EC_UAA_CID+' -csc '+EC_UAA_CSC+' -shc -dur 300 -dbg -pxy '+PROXY+' &'
 
