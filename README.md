@@ -1,10 +1,28 @@
 # ec-test-automation-II
-Enterprise-Connect Test Automation
+## Enterprise-Connect Test Automation
+Execute the root build.sh will produce a docker image which is the foundation of the related test in the subdirectories, respectively. The artifact image will be checked-in the designated dtr repo in the end of the script.  
 
 ### Goal
 - To test EC usage model `postgres(cf)<-server(cf)->gateway(cf)<-client(jenkins)<-request(jenkins)`
 - Standardise the usage compatibility.
 - Beginning of May 1st '18, effective immidiately, we will be implementing and maintaining EC One, the [promise of compatibility](#) for the future of EC core development.
+
+## How to test
+### test out a use case in the subfirectory
+
+```shell
+#clone this repo
+https://github.build.ge.com/Enterprise-Connect/ec-tst-automation-II.git
+
+#build the test foundry image and push it to the dtr
+./build.sh
+
+#pull the image and readying for the test
+docker pull dtr.predix.io/dig-digiconnect/ec-agent-testsuite:v1beta
+
+#run a test in the subdirectory
+docker run --env-file ./env.list -v \"${theDIR}\":/benchmark -u root -i --name ec-agent-tesetsuite_${BUILD_NUMBER} dtr.predix.io/dig-digiconnect/ec-agent-testsuite:v1beta 
+```
 
 ## Revision Matrix
 Env | Rev. (prefix) | Agent | Service | CF Broker | SDK/Plugins | Tools
