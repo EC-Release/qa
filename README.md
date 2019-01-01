@@ -25,7 +25,7 @@ docker run --env-file ./env.list -v \"${theDIR}\":/benchmark -u root -i --name e
 ```
 ### Access the Digital-Foundry Jenkins
 
-It's possible to execute/access these pre-configured Jenkins' jobs instead of scratching head to find out whys. Please refer to [the steps to obtain your Digital-Foundry Jenkins](https://github.build.ge.com/Enterprise-Connect/ec-sdk-buildpack/blob/beta/README.md#if-you-are-granted-access-to-the-digi-digiconnect-org-dtrpredixio-you-may-use-the-digital-foundry-jenkins-to-access-all-builds-) 
+It's possible to execute/access these pre-configured Jenkins' jobs instead of scratching head to find out whys. Please refer to [these steps to obtain your Digital-Foundry Jenkins](https://github.build.ge.com/Enterprise-Connect/ec-sdk-buildpack/blob/beta/README.md#if-you-are-granted-access-to-the-digi-digiconnect-org-dtrpredixio-you-may-use-the-digital-foundry-jenkins-to-access-all-builds-) 
 
 ## Revision Matrix
 Env | Rev. (prefix) | Agent | Service | CF Broker | SDK/Plugins | Tools
