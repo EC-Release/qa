@@ -29,7 +29,6 @@ RUN pip2 install docker
 
 RUN cf --version
 
-
 #RUN ls -al && pwd
 CMD cd /benchmark && chmod -R 755 ./ && \
     python2 -u ./test.py
