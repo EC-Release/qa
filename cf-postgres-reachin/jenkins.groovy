@@ -79,15 +79,15 @@ cat ./env.list
 
 		    stage('run docker'){
 			//def theDIR = env.WORKSPACE + "/"+env.TEST_PATH
-			def theDIR = sh (
+			def DIND_PATH = sh (
 			    script: "pwd",
 			    returnStdout: true
 			).trim()
 
 			sh """
-echo ${theDIR}
-docker run --env-file ./env.list -v \"${theDIR}\":/benchmark -u root -i --name ec-agent-tesetsuite_${BUILD_NUMBER} dtr.predix.io/dig-digiconnect/ec-agent-testsuite:v1beta
-""" 
+echo ${DIND_PATH}
+docker run --network host --env-file ./env.list -v ${BUILD_PATH}:/benchmark -e HTTPS_PROXY=${HTTPS_PROXY} -e NO_PROXY=${NO_PROXY} -e DIND_PATH=${DIND_PATH} -i --name ec-agent-tesetsuite_${BUILD_NUMBER} dtr.predix.io/dig-digiconnect/ec-agent-testsuite:v1beta
+"""
 		    }
 		}		
 	    }
