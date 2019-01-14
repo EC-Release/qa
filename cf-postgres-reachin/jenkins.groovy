@@ -80,7 +80,7 @@ cat ./env.list
 		    stage('run docker'){
 			//def theDIR = env.WORKSPACE + "/"+env.TEST_PATH
 			def theDIR = sh (
-			    script: "pwd",
+			    script: "echo $(pwd)",
 			    returnStdout: true
 			).trim()
 
