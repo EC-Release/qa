@@ -78,12 +78,29 @@ cat ./env.list
 			
 		    }
 
+
 		    stage('run docker'){
-			def theDIR = env.WORKSPACE + "/"+env.TEST_PATH
-			sh """
-docker run --env-file ./env.list -v \"${theDIR}\":/benchmark -u root -i --name ec-agent-tesetsuite_${BUILD_NUMBER} dtr.predix.io/dig-digiconnect/ec-agent-testsuite:v1beta
-""" 
+
+			def PWD_PATH = sh (
+			    script: "pwd",
+			    returnStdout: true
+			).trim()
+
+			def DIND_PATH = PWD_PATH.replace(env.JENKINS_HOME,"")
+
+			if (env.HTTPS_PROXY!=null){
+			    sh """
+echo HTTPS_PROXY=${HTTPS_PROXY} | DIND_PATH=${DIND_PATH}
+docker run --network host --env-file ./env.list -v ${BUILD_PATH}:/benchmark -e HTTPS_PROXY=${HTTPS_PROXY} -e NO_PROXY=${NO_PROXY} -e DIND_PATH=${DIND_PATH} -i --name ec-agent-tesetsuite_${BUILD_NUMBER} dtr.predix.io/dig-digiconnect/ec-agent-testsuite:v1beta
+"""
+			} else {
+			    sh """
+echo DIND_PATH=${DIND_PATH}
+docker run --network host --env-file ./env.list -v ${BUILD_PATH}:/benchmark -e DIND_PATH=${DIND_PATH} -i --name ec-agent-tesetsuite_${BUILD_NUMBER} dtr.predix.io/dig-digiconnect/ec-agent-testsuite:v1beta
+"""
+			}
 		    }
+			
 		}		
 	    }
 	/* disable the file check-in until a better solution identified
