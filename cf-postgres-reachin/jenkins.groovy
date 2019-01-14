@@ -80,6 +80,8 @@ cat ./env.list
 		    stage('run docker'){
 			def theDIR = env.WORKSPACE + "/"+env.TEST_PATH
 			sh """
+pwd
+ls -al
 docker run --env-file ./env.list -v \"${theDIR}\":/benchmark -u root -i --name ec-agent-tesetsuite_${BUILD_NUMBER} dtr.predix.io/dig-digiconnect/ec-agent-testsuite:v1beta
 """ 
 		    }

@@ -34,6 +34,6 @@ function docker_run () {
 ARTIFACT=ec-int-test
 
 #unset_proxy
-curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" | tar -zx
+curl -k -L "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" | tar -zx
 #no_docker_run
 docker_run
