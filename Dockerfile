@@ -32,7 +32,7 @@ RUN cf --version
 VOLUME /benchmark
 
 #RUN ls -al && pwd
-CMD ls -la /benchmark && cd /benchmark$DIND_PATH && chmod -R 755 ./ && \
+CMD ls -la /benchmark$DIND_PATH && cd /benchmark$DIND_PATH && chmod -R 755 ./ && \
     python2 -u ./test.py
 
 #RUN chmod +x $GOPATH/src/{DHOME}
