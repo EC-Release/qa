@@ -86,7 +86,6 @@ cat ./env.list
 
 			def DIND_PATH = PWD_PATH.replace(env.JENKINS_HOME,"")
 
-			 cf-postgres-reachin/jenkins.groovy
 			if (env.HTTPS_PROXY!=null){
 			sh """
 echo HTTPS_PROXY=${HTTPS_PROXY} DIND_PATH=${DIND_PATH}
