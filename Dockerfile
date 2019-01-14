@@ -29,8 +29,10 @@ RUN pip2 install docker
 
 RUN cf --version
 
+VOLUME /benchmark
+
 #RUN ls -al && pwd
-CMD cd /benchmark && chmod -R 755 ./ && \
+CMD cd /benchmark && ls -la && chmod -R 755 ./ && \
     python2 -u ./test.py
 
 #RUN chmod +x $GOPATH/src/{DHOME}
