@@ -12,6 +12,8 @@ node(env.JENV) {
 
 	stage('init'){
 
+            deleteDir()
+	    
 	    checkout scm
 	    sh 'ls -al'
 	    echo "init"
