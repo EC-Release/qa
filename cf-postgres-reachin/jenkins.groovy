@@ -140,7 +140,7 @@ docker run --rm --network host --env-file ./env.list -v ${BUILD_PATH}:/benchmark
          subject: 'project build failed',
          to: 'zzzz@yyyyy.com'
 	 */
-        //deleteDir()
+        deleteDir()
         throw err
     }
 
