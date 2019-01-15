@@ -65,6 +65,7 @@ eval "sed -i -e 's#{EC_SERVER_INST}#${EC_SERVER_INST}#g' ./env.list"
 eval "sed -i -e 's#{EC_GATEWAY_INST}#${EC_GATEWAY_INST}#g' ./env.list"
 eval "sed -i -e 's#{EC_SCALE_NUM}#${EC_SCALE_NUM}#g' ./env.list"
 eval "sed -i -e 's#{EC_GROUP_ID}#${EC_GROUP_ID}#g' ./env.list"
+eval "sed -i -e 's#{EC_TEST_INDEX}#${EC_TEST_INDEX}#g' ./env.list"
 cat ./env.list
 """
 

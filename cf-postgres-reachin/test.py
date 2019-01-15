@@ -72,8 +72,9 @@ EC_SCALE_CMD='cf scale {} -i {}'
 
 EC_TEST_TABLE='ectest'
 
-def main():
-    
+EC_TEST_INDEX=os.environ['EC_TEST_INDEX']
+
+def init():
     c.logger.info('begin deploy.')
   
     #cf login
@@ -157,13 +158,7 @@ def main():
     #scale server
     os.system(EC_SCALE_CMD.format(EC_SERVER_APP_NAME, EC_SCALE_NUM))
 
-    #sleep(7)
-
-    #start server
-    #os.system('cf start {}'.format(EC_SERVER_APP_NAME))
-
-    sleep(20)
-
+def start():
     #launch agent in client mode
     os.system(EC_AGT_CLIENT_VAR)
 
@@ -188,7 +183,26 @@ def main():
         #t = threading.Thread(target=TestMain, args=(EC_TEST_TABLE,"host='localhost' port='5432' dbname='postgres' user='postgres' password='sa'",i,))
         threads.append(t)
         t.start()
+    
+def main():
+    
+    if EC_TEST_INDEX=='start':
+        start()
+        return
+    
+    #sleep(7)
 
+    #start server
+    #os.system('cf start {}'.format(EC_SERVER_APP_NAME))
+
+    init()
+
+    #wait till servers list got cleared out
+    sleep(20)
+
+    start()
+
+    
 def TestMain(tname,connstr,tnum):
     #db=PostgresTest(connstr)
     for x in range(0,EC_TEST_LOOP):
