@@ -12,6 +12,8 @@ node(env.JENV) {
 
 	stage('init'){
 
+	    deleteDir()
+
 	    checkout scm
 	    sh 'ls -al'
 	    echo "init"
@@ -141,6 +143,7 @@ docker run --rm --network host --env-file ./env.list -v ${BUILD_PATH}:/benchmark
          to: 'zzzz@yyyyy.com'
 	 */
         deleteDir()
+
         throw err
     }
 
