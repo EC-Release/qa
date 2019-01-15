@@ -95,14 +95,14 @@ def init():
     c.Unzip(EC_SDK_DOWNLOAD[EC_SDK_DOWNLOAD.rfind('/')+1:],EC_SDK_DIR)
     EC_ARCH_NAME=EC_ART_NAME+'.tar.gz'
     arch=c.find(EC_ARCH_NAME,EC_SDK_DIR)
-    os.system('tar -C {} -xvzf {}'.format(EC_SDK_DIR,arch)) 
-    
+    os.system('tar -C {} -xvzf {}'.format(EC_SDK_DIR,arch))
     art=c.find(EC_ART_NAME,EC_SDK_DIR)
 
     #keep the original
     from shutil import copyfile
     copyfile(art, './'+EC_ART_NAME)
-
+    os.system('./{} -ver'.format(EC_ART_NAME))
+    
     #copy from the original
     from shutil import copyfile
     copyfile(EC_YML+'.origin',EC_YML)
