@@ -101,7 +101,7 @@ def init():
     #keep the original
     from shutil import copyfile
     copyfile(art, './'+EC_ART_NAME)
-    os.system('chmod 777 {};./{} -ver'.format(EC_ART_NAME,EC_ART_NAME))
+    os.system('chmod 777 ./{};./{} -ver'.format(EC_ART_NAME,EC_ART_NAME))
     
     #copy from the original
     from shutil import copyfile
