@@ -86,12 +86,12 @@ def init():
     #psxy=os.environ['https_proxy']
     #os.environ['https_proxy']=''
     #os.environ['http_proxy']=''
+    os.system('rm -Rf {};ls -al',EC_SDK_DIR)
     c.Download(EC_SDK_DOWNLOAD)
     #os.environ['https_proxy']=psxy
     #os.environ['http_proxy']=pxy
     # else:
     #    c.Download(EC_SDK_DOWNLOAD)
-    
     c.Unzip(EC_SDK_DOWNLOAD[EC_SDK_DOWNLOAD.rfind('/')+1:],EC_SDK_DIR)
     EC_ARCH_NAME=EC_ART_NAME+'.tar.gz'
     arch=c.find(EC_ARCH_NAME,EC_SDK_DIR)
@@ -101,7 +101,6 @@ def init():
     #keep the original
     from shutil import copyfile
     copyfile(art, './'+EC_ART_NAME)
-    os.system('./{} -ver'.format(EC_ART_NAME))
     
     #copy from the original
     from shutil import copyfile
