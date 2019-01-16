@@ -97,7 +97,8 @@ def init():
     arch=c.find(EC_ARCH_NAME,EC_SDK_DIR)
     os.system('tar -C {} -xvzf {}'.format(EC_SDK_DIR,arch))
     art=c.find(EC_ART_NAME,EC_SDK_DIR)
-
+    os.systme('ls -la {}',art)
+    
     #keep the original
     from shutil import copyfile
     copyfile(art, './'+EC_ART_NAME)
