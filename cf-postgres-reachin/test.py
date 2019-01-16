@@ -86,7 +86,7 @@ def init():
     #psxy=os.environ['https_proxy']
     #os.environ['https_proxy']=''
     #os.environ['http_proxy']=''
-    os.system('chmod 755 {};rm -Rf {};ls -al',EC_SDK_DIR)
+    os.system('chmod 777 {};rm -Rf {};ls -al'.format(EC_SDK_DIR,EC_SDK_DIR))
     c.Download(EC_SDK_DOWNLOAD)
     #os.environ['https_proxy']=psxy
     #os.environ['http_proxy']=pxy
@@ -101,6 +101,7 @@ def init():
     #keep the original
     from shutil import copyfile
     copyfile(art, './'+EC_ART_NAME)
+    os.system('chmod 777 {};./{} -ver'.format(EC_ART_NAME,EC_ART_NAME))
     
     #copy from the original
     from shutil import copyfile
@@ -182,6 +183,10 @@ def start():
         #t = threading.Thread(target=TestMain, args=(EC_TEST_TABLE,"host='localhost' port='5432' dbname='postgres' user='postgres' password='sa'",i,))
         threads.append(t)
         t.start()
+
+def cleanup():
+    os.system('chmod -R 777 ./;rm {};rm -Rf {};ls -al'.format(EC_SDK_DOWNLOAD,EC_SDK_DIR))
+    
     
 def main():
     
@@ -218,6 +223,7 @@ def TestMain(tname,connstr,tnum):
         db.conn.close()
         
 def exit_handler():
+    cleanup()
     #minimise the server resource
     os.system(EC_SCALE_CMD.format(EC_SERVER_APP_NAME, 1))
         

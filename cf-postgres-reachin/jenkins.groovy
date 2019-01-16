@@ -11,8 +11,6 @@ node(env.JENV) {
     try {
 
 	stage('init'){
-
-            deleteDir()
 	    
 	    checkout scm
 	    sh 'ls -al'
