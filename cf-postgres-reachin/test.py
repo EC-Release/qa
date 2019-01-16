@@ -86,7 +86,7 @@ def init():
     #psxy=os.environ['https_proxy']
     #os.environ['https_proxy']=''
     #os.environ['http_proxy']=''
-    os.system('rm -Rf {};ls -al',EC_SDK_DIR)
+    os.system('chmod 755 {};rm -Rf {};ls -al',EC_SDK_DIR)
     c.Download(EC_SDK_DOWNLOAD)
     #os.environ['https_proxy']=psxy
     #os.environ['http_proxy']=pxy
