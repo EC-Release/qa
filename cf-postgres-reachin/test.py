@@ -86,7 +86,7 @@ def init():
     #psxy=os.environ['https_proxy']
     #os.environ['https_proxy']=''
     #os.environ['http_proxy']=''
-    os.system('chmod 777 {};rm -Rf {};ls -al'.format(EC_SDK_DIR,EC_SDK_DIR))
+    os.system('chmod 777 {} && rm -Rf {} && ls -al'.format(EC_SDK_DIR,EC_SDK_DIR))
     c.Download(EC_SDK_DOWNLOAD)
     #os.environ['https_proxy']=psxy
     #os.environ['http_proxy']=pxy
@@ -101,7 +101,7 @@ def init():
     #keep the original
     from shutil import copyfile
     copyfile(art, './'+EC_ART_NAME)
-    os.system('chmod 777 ./{};./{} -ver'.format(EC_ART_NAME,EC_ART_NAME))
+    os.system('ls -la && chmod 777 ./{} && ./{} -ver'.format(EC_ART_NAME,EC_ART_NAME))
     
     #copy from the original
     from shutil import copyfile
