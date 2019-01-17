@@ -100,18 +100,17 @@ def init():
     os.system(EC_AGT_SERVER_VAR)
     sleep(7)
 
-    print EC_AGT_CLIENT_VAR
-    os.system(EC_AGT_CLIENT_VAR)
-    sleep(7)
+    #print EC_AGT_CLIENT_VAR
+    #os.system(EC_AGT_CLIENT_VAR)
+    #sleep(7)
     
 def start():
+    
+    print(EC_AGT_CLIENT_VAR)
     #launch agent in client mode
     os.system(EC_AGT_CLIENT_VAR)
 
-    print('client agent cmd-')
-    print(EC_AGT_CLIENT_VAR)
-    
-    sleep(5)
+    sleep(7)
     
     db=PostgresTest(PG_CONNSTR)
 
