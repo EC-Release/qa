@@ -29,6 +29,8 @@ RUN pip2 install docker
 
 RUN cf --version
 
+USER 1000
+
 VOLUME /benchmark
 
 #RUN ls -al && pwd
