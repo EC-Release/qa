@@ -92,12 +92,15 @@ def init():
     copyfile(art, './'+EC_ART_NAME)
     os.system('ls -la && chmod 777 ./{} && ./{} -ver'.format(EC_ART_NAME,EC_ART_NAME))
 
+    print EC_AGT_GATEWAY_VAR
     os.system(EC_AGT_GATEWAY_VAR)
     sleep(7)
 
+    print EC_AGT_SERVER_VAR
     os.system(EC_AGT_SERVER_VAR)
     sleep(7)
 
+    print EC_AGT_CLIENT_VAR
     os.system(EC_AGT_CLIENT_VAR)
     sleep(7)
     
