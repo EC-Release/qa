@@ -57,7 +57,7 @@ EC_SERVER_APP_NAME=os.environ['EC_SERVER_INST']
 EC_AGT_SERVER_VAR='./'+EC_ART_NAME+' -mod server -aid '+EC_SERVER_ID+' -hst ws://localhost:7990/agent -rht localhost -rpt 5432 -cid '+EC_UAA_CID+' -csc '+EC_UAA_CSC+' -oa2 '+EC_UAA+' -dur 300 -dbg -hca 8990 -shc -zon '+EC_SERVICE_ZONE+' -sst '+EC_SERVICE+' -grp '+EC_GROUP_ID+' &' 
 
 #noproxy env
-EC_AGT_CLIENT_VAR='./'+EC_ART_NAME+' -mod client -aid '+EC_CLIENT_ID+' -hst ws://localhost:7990/agent -lpt 17990 -tid '+EC_SERVER_ID+' -oa2 '+EC_UAA+' -cid '+EC_UAA_CID+' -csc '+EC_UAA_CSC+' -shc -dur 300 -dbg -grp '+EC_GROUP_ID+' &'
+EC_AGT_CLIENT_VAR='./'+EC_ART_NAME+' -mod client -aid '+EC_CLIENT_ID+' -hst ws://localhost:7990/agent -lpt 18990 -tid '+EC_SERVER_ID+' -oa2 '+EC_UAA+' -cid '+EC_UAA_CID+' -csc '+EC_UAA_CSC+' -shc -dur 300 -dbg -grp '+EC_GROUP_ID+' &'
 
 #EC_AGT_CLIENT_VAR='./'+EC_ART_NAME+' -mod client -aid '+EC_CLIENT_ID+' -hst wss://'+EC_GATEWAY_APP_NAME+'.'+EC_SHARED_DOMAIN+'/agent -lpt 7990 -tid '+EC_SERVER_ID+' -oa2 '+EC_UAA+' -cid '+EC_UAA_CID+' -csc '+EC_UAA_CSC+' -shc -dur 300 -dbg -pxy '+PROXY+' &'
 
