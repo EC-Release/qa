@@ -51,7 +51,7 @@ EC_SERVICE_INST=os.environ['EC_SERVICE_INST']
 EC_SDK_DIR='sdk'
 EC_ART_NAME='ecagent_linux_var'
 EC_GATEWAY_APP_NAME=os.environ['EC_GATEWAY_INST']
-EC_AGT_GATEWAY_VAR='./'+EC_ART_NAME+' -mod gateway -lpt ${PORT} -zon '+EC_SERVICE_ZONE+' -sst '+EC_SERVICE+' -dbg -tkn '+EC_SERVICE_TKN+' -shc'
+EC_AGT_GATEWAY_VAR='./'+EC_ART_NAME+' -mod gateway -gpt ${PORT} -zon '+EC_SERVICE_ZONE+' -sst '+EC_SERVICE+' -dbg -tkn '+EC_SERVICE_TKN+' -shc -hst wss://'+EC_GATEWAY_APP_NAME+'.'+EC_SHARED_DOMAIN+'/agent'
 
 EC_SERVER_APP_NAME=os.environ['EC_SERVER_INST']
 EC_AGT_SERVER_VAR='./'+EC_ART_NAME+' -mod server -aid '+EC_SERVER_ID+' -hst wss://'+EC_GATEWAY_APP_NAME+'.'+EC_SHARED_DOMAIN+'/agent -rht '+EC_PSQL_HOST+' -rpt 5432 -cid '+EC_UAA_CID+' -csc '+EC_UAA_CSC+' -oa2 '+EC_UAA+' -dur 300 -dbg -hca ${PORT} -shc -zon '+EC_SERVICE_ZONE+' -sst '+EC_SERVICE+' -grp '+EC_GROUP_ID
