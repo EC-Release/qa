@@ -119,13 +119,7 @@ def init():
     
     #chmod execution
     os.system(EC_CHMOD_AGT_CMD)
-'''
-    #stop gateway
-    os.system('cf stop {}'.format(EC_GATEWAY_APP_NAME))
     
-    #push gateway
-    os.system(CF_PUSH_CMD)
-'''
     #copy from the original
     from shutil import copyfile
     copyfile(EC_YML+'.origin',EC_YML)
