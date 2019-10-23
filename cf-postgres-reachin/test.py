@@ -145,10 +145,10 @@ def init():
 
     #sleep(7)
 
-'''
+    '''
     #scale gateway
     os.system(EC_SCALE_CMD.format(EC_GATEWAY_APP_NAME, EC_SCALE_NUM))
-'''
+    '''
 
     #sleep(7)
 
