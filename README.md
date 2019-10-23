@@ -3,7 +3,7 @@
 Execute the root build.sh will produce a docker image which is the foundation of the related test in the subdirectories, respectively. The artifact image will be checked-in the designated dtr repo in the end of the script.  
 
 ### Goal
-- To test EC usage model `postgres(cf)<-server(cf)->gateway(cf)<-client(jenkins)<-request(jenkins)`
+- To test EC usage model `postgres(cf)<-server(cf)->gateway(aws-vpc)<-client(jenkins)<-request(jenkins)`
 - Standardise the usage compatibility.
 - Beginning of May 1st '18, effective immidiately, we will be implementing and maintaining EC One, the [promise of compatibility](#) for the future of EC core development.
 
