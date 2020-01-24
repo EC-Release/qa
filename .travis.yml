@@ -1,0 +1,16 @@
+language: minimal
+
+services:
+  - docker
+  - postgresql
+
+before_install:
+  - docker pull enterpriseconnect/qa:v1.1beta
+  - docker images
+
+script:
+  - >
+    docker run --network host
+    -v $TRAVIS_BUILD_DIR:/build
+    -e DIND_PATH=
+    -it enterpriseconnect/qa:v1.1beta
