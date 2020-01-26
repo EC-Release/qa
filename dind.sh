@@ -13,5 +13,5 @@
 
 #set -x
 set -e
-
+chmod -R 755 .
 python3 db.postgres.py
