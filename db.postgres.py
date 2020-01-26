@@ -9,7 +9,10 @@ def main():
         
 def exit_handler():
     cleanup()
-    os.system('error')
+    print('error has been cleaned up.')
+
+def cleanup():
+    print('clean up the build')
         
 if __name__=='__main__':
     main()
