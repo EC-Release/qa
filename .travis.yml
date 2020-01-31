@@ -14,3 +14,11 @@ script:
     -v $TRAVIS_BUILD_DIR:/build
     -e DIND_PATH=
     -it enterpriseconnect/qa:v1.1beta
+
+notifications:  
+  email:  
+    recipients:  
+    - ec-research@ge.com
+    - prasada.alokam@ge.com
+    on_success: always  
+    on_failure: always
