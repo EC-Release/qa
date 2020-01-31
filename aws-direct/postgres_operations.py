@@ -21,16 +21,21 @@ class Postgres_operations():
 
             cursor.execute("select name from sct.features where id=5")
 
+            afterqueryexecute = datetime.now()
+
+            print('Time to execute query: ', afterqueryexecute - before)
+
             print(cursor.fetchall())
 
             conn.close()
 
-        except:
-            print ("Exception while handling operations")
+        except Exception, e:
+            print ("Exception while handling the operations")
+            print(e)
 
         after = datetime.now()
 
-        print ('Time to execute: ', after - before)
+        print ('Total time to execute: ', after - before)
 
 
 
@@ -38,9 +43,7 @@ class Postgres_operations():
     def bulkdata(self, args):
 
         print('Inside postgres bulkdata method')
-
         before = datetime.now()
-
         try:
             connection_str = "dbname='"+args.dbname+"' user='"+args.user+"' host='"+args.host+"' password='"+args.password+"' port='"+args.port+"'"
 
@@ -52,12 +55,18 @@ class Postgres_operations():
 
             cursor.execute(query)
 
+            afterqueryexec = datetime.now()
+            print("Query execution completed: ", afterqueryexec - before)
+
             with open('dbpostgres.csv', 'w') as csvfile:
                 csv_writer = csv.writer(csvfile)
                 csv_writer.writerows(cursor)
 
-        except:
+            conn.close()
+
+        except Exception, e:
             print ('Exception while handling postgres operations')
+            print(e)
 
         after = datetime.now()
 
@@ -68,9 +77,7 @@ class Postgres_operations():
     def activeconnectionforlongtime(self, args):
 
         print ('Inside postgres activeconnectionforlongtime method')
-
         before = datetime.now()
-
         try:
             connection_str = "dbname='"+args.dbname+"' user='"+args.user+"' host='"+args.host+"' password='"+args.password+"' port='"+args.port+"'"
 
@@ -86,12 +93,13 @@ class Postgres_operations():
 
                 print(now.strftime("%H:%M:%S"), cursor.fetchall())
 
-                time.sleep(120)
+                time.sleep(1800)
 
             cnx.close()
 
-        except:
+        except Exception, e:
             print ("Exception while handling postgres database")
+            print(e)
 
         after = datetime.now()
 

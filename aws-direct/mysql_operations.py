@@ -1,8 +1,8 @@
+import time
+from datetime import datetime
+
 import mysql.connector
 
-from mysql.connector import errorcode
-from datetime import datetime
-import time
 
 class Mysql_operations():
 
