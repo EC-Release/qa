@@ -20,3 +20,9 @@ python db_main.py --database postgres --operation {operation} --host {clientIP} 
 -- Execute below command to get help and allowed values for arguments
 python db_main.py --help
 ```
+
+## Performance statistics
+
+Agent | Gateway | Environment | Time to complete process |
+--- | --- | --- | --- |
+v1.1beta.fukuoka.2725 | AWS | Gateway - US VPC, Server - On Prem, Client - EU VPC | 150s
