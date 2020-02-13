@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Visitor-Management Suite">
+
+<listeners>
+<listener class-name="com.ge.digital.itops.webdriver.BaseTestNGWebDriverListener"/>
+<listener class-name="com.ge.digital.itops.testng.PDFReporter"/>
+<listener class-name="com.ge.digital.itops.testng.SkipListener"/>
+<!-- <listener class-name="com.viIdea.utility.ITestAnnotationTest" /> -->
+</listeners>
+
+
+
+  <parameter name="reportName" value="EHS-ManagementOfChange"/>
+  <!--   <parameter name="reportDetailLevel" value="1"/>
+    <parameter name="reportDetailLevel" value="2"/>
+    <parameter name="startBrowserBefore" value="test" /> 
+ -->    
+ 	<parameter name="reportDetailLevel" value="127" />
+	<parameter name="waitTime" value="40" />
+	
+		
+	 <parameter name="browser" value="chrome" />  
+    	
+ 
+<!--   
+ <parameter name="recordTest" value="true"/> -->
+   <!-- <parameter name="url" value="https://mocstage.run.aws-usw02-pr.ice.predix.io"/>-->
+    <parameter name="url" value="https://gehealthcare-amer--qa2.cs65.my.salesforce.com/"/>
+   <!-- <parameter name="proxy" value="https://cloudproxy.setpac.ge.com/pac.pac"/> -->
+    
+   
+   	<parameter name="requirementID" value="" />
+	<parameter name="testObjective" value="System shall provide the ability to create visiting schedule for Employee." />
+	<parameter name="testDescription" value="PRE-REQUISITES: User should have required access rights to create schedule."/>
+   	<parameter name="username" value="saumil.prajapati@gehc.amer.qa2" />
+   	<parameter name="password" value="Zeel@1993" />
+
+  <!--   <test verbose="10" name="test1" preserve-order="true"> -->
+  <test verbose="10" name="Create request">
+        <classes>
+       		<class name="com.ge.corp.GePower.scripts.test1.FlowTest"/>	       		
+        </classes>
+    </test>  
+   
+</suite>

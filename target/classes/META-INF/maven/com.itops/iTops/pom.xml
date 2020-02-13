@@ -1,0 +1,131 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.itops</groupId>
+	<artifactId>iTops</artifactId>
+	<version>2.1.0-SNAPSHOT</version>
+
+
+	<url>http://maven.apache.org</url>
+
+
+	<repositories>
+		<repository>
+			<releases>
+				<enabled>false</enabled>
+				<checksumPolicy>warn</checksumPolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<checksumPolicy>fail</checksumPolicy>
+			</snapshots>
+			<id>nexus-public</id>
+			<name>public-mirror</name>
+
+			<url>http://cihcispappa232c.logon.ds.ge.com:8301/nexus/content/groups/public</url>
+
+			<layout>default</layout>
+		</repository>
+	</repositories>
+
+	<properties>
+		<skipUnitTests>false</skipUnitTests>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<id>integration-test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>com.ge.capital.rainbow.testng.run.Runner</mainClass>
+					<classpathScope>test</classpathScope>
+					<arguments>
+						<argument>build=1</argument>
+						<argument>browser=${browser}</argument>
+						<argument>jenkinsJobLink=${jenkinsJobLink}</argument>
+						<argument>suite-template=${file}</argument>
+						<argument>print=true</argument>
+						<argument>runner-single=true</argument>
+						<argument>suite-name-parameter=browser</argument>
+						<argument>suite-strategy=Sequential</argument>
+						<argument>environment=${environment}</argument>
+					</arguments>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.12.4</version>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/test/resources</directory>
+				<includes>
+					<include>log4j.properties</include>
+				</includes>
+				<targetPath>${basedir}/target</targetPath>
+			</resource>
+		</resources>
+	</build>
+
+
+	<dependencies>
+
+
+		<dependency>
+			<groupId>com.ge.digital.itops</groupId>
+			<artifactId>itops-browser</artifactId>
+			<version>2.1.0-SNAPSHOT</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.ge.digital.itops</groupId>
+			<artifactId>itops-testng</artifactId>
+			<version>2.1.0-SNAPSHOT</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+
+
+
+
+
+		<!-- <dependency> <groupId>org.jtwig</groupId> <artifactId>jtwig-core</artifactId> 
+			<version>5.86.1.RELEASE</version> </dependency> <dependency> <groupId>com.mashape.unirest</groupId> 
+			<artifactId>unirest-java</artifactId> <version>1.4.9</version> </dependency> -->
+
+	</dependencies>
+
+</project>

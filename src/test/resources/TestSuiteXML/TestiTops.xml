@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="GE Energy - Configurator  Stack Test">
+
+<listeners>
+<listener class-name="com.ge.digital.itops.webdriver.BaseTestNGWebDriverListener"/>
+<listener class-name="com.ge.digital.itops.testng.PDFReporter"/>
+<listener class-name="com.ge.digital.itops.testng.SkipListener"/>
+</listeners>
+
+ <parameter name="reportName" value="Test1"/>
+ 
+
+    <parameter name="reportDetailLevel" value="127"/>
+    <parameter name="waitTime" value="20"/>
+ 
+ 
+    <parameter name="url" value="https://mocstage.run.aws-usw02-pr.ice.predix.io"/>
+    <parameter name="browser" value="chrome" />  
+   <parameter name="proxy" value="https://cloudproxy.setpac.ge.com/pac.pac"/>
+   
+   
+   
+
+    <test verbose="1" name="test1" preserve-order="true">
+        <classes>
+        
+       <class name="com.ge.corp.GePower.scripts.test1.CreateScripts"/>	
+          <!--   <class name="com.configurator.panelboard.test.PanelboardReengineerBOMCostTest"/> -->     
+        
+        </classes>
+        
+    </test>    
+    
+    
+    
+    <!-- <test verbose="10" name="test2" preserve-order="true">
+        <classes>
+        
+       <class name="com.ge.corp.GePower.scripts.test1.TestScript2"/>	
+            <class name="com.configurator.panelboard.test.PanelboardReengineerBOMCostTest"/>     
+        
+        </classes>
+        
+    </test>    
+    
+    
+ 
+    
+    <test verbose="1" name="test3" preserve-order="true">
+        <classes>
+        
+       <class name="com.ge.corp.GePower.scripts.test1.TestScript3"/>	
+            <class name="com.configurator.panelboard.test.PanelboardReengineerBOMCostTest"/>     
+        
+        </classes>
+        
+    </test>   -->  
+    
+    
+</suite>

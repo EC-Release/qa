@@ -1,0 +1,9 @@
+---
+  applications:
+    - name: app-name
+      memory: 256M
+      instances: 1
+      stack: cflinuxfs2
+      path: .
+      command: bash ./gateway.sh
+      buildpack: https://github.com/cloudfoundry/binary-buildpack.git#v1.0.32

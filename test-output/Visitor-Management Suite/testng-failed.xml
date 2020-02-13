@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Visitor-Management Suite]">
+  <parameter name="password" value="Zeel@1993"/>
+  <parameter name="reportName" value="EHS-ManagementOfChange"/>
+  <parameter name="testObjective" value="System shall provide the ability to create visiting schedule for Employee."/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="browserVersion" value="77.0.3865.120"/>
+  <parameter name="reportDetailLevel" value="127"/>
+  <parameter name="requirementID" value=""/>
+  <parameter name="testDescription" value="PRE-REQUISITES: User should have required access rights to create schedule."/>
+  <parameter name="waitTime" value="40"/>
+  <parameter name="url" value="https://gehealthcare-amer--qa2.cs65.my.salesforce.com/"/>
+  <parameter name="username" value="saumil.prajapati@gehc.amer.qa2"/>
+  <listeners>
+    <listener class-name="com.ge.digital.itops.webdriver.BaseTestNGWebDriverListener"/>
+    <listener class-name="com.ge.digital.itops.testng.PDFReporter"/>
+    <listener class-name="com.ge.digital.itops.testng.SkipListener"/>
+  </listeners>
+  <test verbose="10" name="Create request">
+    <classes>
+      <class name="com.ge.corp.GePower.scripts.test1.FlowTest"/>
+    </classes>
+  </test> <!-- Create request -->
+  <test name="Create request(failed)">
+    <classes>
+      <class name="com.ge.corp.GePower.scripts.test1.FlowTest">
+        <methods>
+          <include name="startBrowserBeforeSuite"/>
+          <include name="check_sorting_functionality"/>
+          <include name="closeBroserAfterTest"/>
+          <include name="setbrowse"/>
+          <include name="closeBrowserAfterSuite"/>
+          <include name="Create_New_Oppty_functionality" invocation-numbers="0"/>
+          <include name="waitTime"/>
+          <include name="AfterMethod_CheckForFailure"/>
+          <include name="startBrowserBeforeTest"/>
+          <include name="quitbrowser"/>
+        </methods>
+      </class> <!-- com.ge.corp.GePower.scripts.test1.FlowTest -->
+    </classes>
+  </test> <!-- Create request(failed) -->
+</suite> <!-- Failed suite [Visitor-Management Suite] -->

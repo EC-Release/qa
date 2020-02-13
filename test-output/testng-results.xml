@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="6" passed="6">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="103915" started-at="2020-02-12T12:28:02Z" finished-at="2020-02-12T12:29:46Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="103915" started-at="2020-02-12T12:28:02Z" finished-at="2020-02-12T12:29:46Z">
+      <class name="com.ge.corp.DigitalConnect.ec_automationpoc.scripts.EC_Setup_With_ExistingService">
+        <test-method status="PASS" signature="cfLogin()[pri:0, instance:com.ge.corp.DigitalConnect.ec_automationpoc.scripts.EC_Setup_With_ExistingService@21d03963]" name="cfLogin" duration-ms="10087" started-at="2020-02-12T17:58:02Z" finished-at="2020-02-12T17:58:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cfLogin -->
+        <test-method status="PASS" signature="ecSetupUsingExistingService()[pri:1, instance:com.ge.corp.DigitalConnect.ec_automationpoc.scripts.EC_Setup_With_ExistingService@21d03963]" name="ecSetupUsingExistingService" duration-ms="10570" started-at="2020-02-12T17:58:12Z" finished-at="2020-02-12T17:58:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ecSetupUsingExistingService -->
+        <test-method status="PASS" signature="loginUaaDashboard()[pri:2, instance:com.ge.corp.DigitalConnect.ec_automationpoc.scripts.EC_Setup_With_ExistingService@21d03963]" name="loginUaaDashboard" duration-ms="17306" started-at="2020-02-12T17:58:23Z" finished-at="2020-02-12T17:58:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginUaaDashboard -->
+        <test-method status="PASS" signature="createUaaClient()[pri:3, instance:com.ge.corp.DigitalConnect.ec_automationpoc.scripts.EC_Setup_With_ExistingService@21d03963]" name="createUaaClient" duration-ms="8018" started-at="2020-02-12T17:58:40Z" finished-at="2020-02-12T17:58:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUaaClient -->
+        <test-method status="PASS" signature="ecSetupContinue()[pri:4, instance:com.ge.corp.DigitalConnect.ec_automationpoc.scripts.EC_Setup_With_ExistingService@21d03963]" name="ecSetupContinue" duration-ms="55017" started-at="2020-02-12T17:58:48Z" finished-at="2020-02-12T17:59:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ecSetupContinue -->
+        <test-method status="PASS" signature="healthConnection()[pri:5, instance:com.ge.corp.DigitalConnect.ec_automationpoc.scripts.EC_Setup_With_ExistingService@21d03963]" name="healthConnection" duration-ms="2897" started-at="2020-02-12T17:59:43Z" finished-at="2020-02-12T17:59:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- healthConnection -->
+      </class> <!-- com.ge.corp.DigitalConnect.ec_automationpoc.scripts.EC_Setup_With_ExistingService -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

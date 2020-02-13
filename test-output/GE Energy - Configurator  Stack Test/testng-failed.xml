@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [GE Energy - Configurator  Stack Test]">
+  <parameter name="proxy" value="https://cloudproxy.setpac.ge.com/pac.pac"/>
+  <parameter name="reportName" value="Test1"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="browserVersion" value="69.0.3497.100"/>
+  <parameter name="reportDetailLevel" value="127"/>
+  <parameter name="waitTime" value="20"/>
+  <parameter name="url" value="https://mocstage.run.aws-usw02-pr.ice.predix.io"/>
+  <listeners>
+    <listener class-name="com.ge.digital.itops.webdriver.BaseTestNGWebDriverListener"/>
+    <listener class-name="com.ge.digital.itops.testng.PDFReporter"/>
+    <listener class-name="com.ge.digital.itops.testng.SkipListener"/>
+  </listeners>
+  <test name="test1">
+    <classes>
+      <class name="com.ge.corp.GePower.scripts.test1.CreateScripts"/>
+    </classes>
+  </test> <!-- test1 -->
+</suite> <!-- Failed suite [GE Energy - Configurator  Stack Test] -->

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [GE DG - Configurator  Stack Test]">
+  <parameter name="proxy" value="https://cloudproxy.setpac.ge.com/pac.pac"/>
+  <parameter name="reportName" value="Test1"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="folderName" value="SampleEC"/>
+  <parameter name="url" value="https://mocstage.run.aws-usw02-pr.ice.predix.io"/>
+  <test name="test1">
+    <classes>
+      <class name="com.ge.corp.DigitalConnect.ec_automationpoc.scripts.EC_Configuration"/>
+    </classes>
+  </test> <!-- test1 -->
+  <test name="test1(failed)">
+    <classes>
+      <class name="com.ge.corp.DigitalConnect.ec_automationpoc.scripts.EC_Configuration">
+        <methods>
+          <include name="ec_config" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.ge.corp.DigitalConnect.ec_automationpoc.scripts.EC_Configuration -->
+    </classes>
+  </test> <!-- test1(failed) -->
+</suite> <!-- Failed suite [GE DG - Configurator  Stack Test] -->

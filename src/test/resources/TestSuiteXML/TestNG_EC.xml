@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="GE DG - Configurator  Stack Test">
+
+	
+
+	<parameter name="reportName" value="Test1" />
+
+
+	
+
+	<parameter name="url"
+		value="https://mocstage.run.aws-usw02-pr.ice.predix.io" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="proxy"
+		value="https://cloudproxy.setpac.ge.com/pac.pac" />
+
+
+	<parameter name="folderName" value="SampleEC"/>
+
+	<test verbose="1" name="test1" preserve-order="true">
+		<classes>
+
+			<class name="com.ge.corp.DigitalConnect.ec_automationpoc.scripts.EC_Configuration" />			
+
+		</classes>
+
+	</test>
+
+</suite>
