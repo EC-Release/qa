@@ -1,13 +1,13 @@
 # Agent Validations Spec
 
 ### Goal
-- Agents usage and validate functionality in multiple scenarios
+- Agents usage and validated functionality in multiple scenarios
 
 ## Revision Matrix
 Rev. (prefix) | Download/Release | SDK/Plugins
 --- | --- | --- 
-v1 | [hokkaido.212](https://github.com/EC-Release/ec-x-sdk/tree/v1.hokkaido.212/dist)<br /><sup>[Release Note](https://github.com/Enterprise-connect/ec-x-sdk/releases/tag/v1.hokkaido.212) </sup> | [v1.hokkaido.212](https://github.com/EC-Release/ec-x-sdk/tree/v1.hokkaido.212/plugins)  
-v1beta | [v1beta.fukuoka.1726](https://github.com/EC-Release/ec-x-sdk/tree/v1beta.fukuoka.1726/dist)<br /><sup>[Release Note](https://github.com/EC-Release/ec-x-sdk/releases/tag/v1beta.fukuoka.1726)</sup> | [v1beta.fukuoka.1726](https://github.com/EC-Release/ec-x-sdk/tree/v1beta.fukuoka.1726/plugins)  
+v1 | [hokkaido.212](https://github.com/EC-Release/sdk/tree/v1.hokkaido.212/dist)<br /><sup>[Release Note](https://github.com/EC-Release/sdk/releases/tag/v1.hokkaido.212) </sup> | [v1.hokkaido.212](https://github.com/EC-Release/sdk/tree/v1.hokkaido.212/plugins)  
+v1beta | [v1beta.fukuoka.1726](https://github.com/EC-Release/sdk/tree/v1beta.fukuoka.1726/dist)<br /><sup>[Release Note](https://github.com/EC-Release/sdk/releases/tag/v1beta.fukuoka.1726)</sup> | [v1beta.fukuoka.1726](https://github.com/EC-Release/sdk/tree/v1beta.fukuoka.1726/plugins)  
 
 ### v1beta.fukuoka.1726
 #### Scenario: Traditional Connection with CF gateway
